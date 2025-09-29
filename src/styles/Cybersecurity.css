@@ -1,0 +1,227 @@
+/* Cybersecurity.css */
+:root {
+  --primary-color: #00bcd4;
+  --primary-dark: #0097a7;
+  --primary-light: #26c6da;
+  --secondary-color: #063155;
+  --text-dark: #2c3e50;
+  --text-light: #7f8c8d;
+  --bg-light: #f8fafc;
+  --bg-white: #ffffff;
+  --shadow-light: 0 2px 10px rgba(0, 0, 0, 0.08);
+  --shadow-medium: 0 8px 25px rgba(0, 0, 0, 0.12);
+  --shadow-heavy: 0 15px 35px rgba(0, 0, 0, 0.2);
+  --border-radius: 12px;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cybersecurity {
+  padding: clamp(40px, 8vw, 80px) clamp(20px, 5vw, 60px);
+  min-height: 100vh;
+  background: var(--bg-white);
+  position: relative;
+}
+
+.cybersecurity::before {
+  content: '';
+  position: absolute;
+  top: -20%;
+  left: -10%;
+  width: 30%;
+  height: 120%;
+  background: linear-gradient(-45deg, rgba(0, 188, 212, 0.03), rgba(6, 49, 85, 0.05));
+  transform: rotate(-10deg);
+  z-index: -1;
+}
+
+.cybersecurity h2 {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  color: var(--text-dark);
+  text-align: center;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  position: relative;
+}
+
+.cybersecurity h2::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-color), var(--primary-light));
+  border-radius: 2px;
+}
+
+.cybersecurity > p {
+  text-align: center;
+  font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+  color: var(--text-light);
+  margin-bottom: 3rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+/* Cyber Grid Layout */
+.cyber-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: 40px;
+}
+
+/* Cyber Cards */
+.cyber-card {
+  background: var(--bg-white);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-light);
+  transition: var(--transition);
+  position: relative;
+  cursor: pointer;
+}
+
+.cyber-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 188, 212, 0.05), transparent);
+  transition: left 0.6s ease;
+  z-index: 1;
+}
+
+.cyber-card:hover {
+  transform: translateY(-12px);
+  box-shadow: var(--shadow-heavy);
+  border-color: var(--primary-light);
+}
+
+.cyber-card:hover::before {
+  left: 100%;
+}
+
+/* Card Images */
+.cyber-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  transition: var(--transition);
+  position: relative;
+  z-index: 2;
+}
+
+.cyber-card:hover img {
+  transform: scale(1.05);
+}
+
+/* Card Content */
+.cyber-card h3 {
+  font-size: 1.4rem;
+  color: var(--text-dark);
+  margin: 1.5rem 1.5rem 0.5rem;
+  font-weight: 600;
+  position: relative;
+  z-index: 2;
+}
+
+.cyber-card p {
+  color: var(--text-light);
+  margin: 0 1.5rem 1.5rem;
+  line-height: 1.6;
+  font-size: 1rem;
+  position: relative;
+  z-index: 2;
+}
+
+/* Special Effects for Different Cards */
+.cyber-card:nth-child(1) {
+  background: linear-gradient(135deg, var(--bg-white) 0%, #f0fdff 100%);
+}
+
+.cyber-card:nth-child(2) {
+  background: linear-gradient(135deg, var(--bg-white) 0%, #fff5f5 100%);
+}
+
+.cyber-card:nth-child(3) {
+  background: linear-gradient(135deg, var(--bg-white) 0%, #f0fff4 100%);
+}
+
+/* Mobile Responsive */
+@media screen and (max-width: 768px) {
+  .cybersecurity {
+    padding: 2rem 1rem;
+  }
+  
+  .cyber-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .cyber-card {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .cyber-card img {
+    height: 180px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .cyber-card img {
+    height: 160px;
+  }
+  
+  .cyber-card h3 {
+    font-size: 1.2rem;
+  }
+  
+  .cybersecurity h2::after {
+    width: 60px;
+    height: 3px;
+  }
+}
+
+/* Animation Classes */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.img-zoom {
+  transition: var(--transition);
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .cyber-card,
+  .cyber-card img,
+  .fade-in {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+  }
+}
+
+.cyber-card:focus {
+  outline: 3px solid var(--primary-color);
+  outline-offset: 2px;
+}

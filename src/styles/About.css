@@ -1,0 +1,326 @@
+/* About.css */
+:root {
+  --primary-color: #00bcd4;
+  --primary-dark: #0097a7;
+  --primary-light: #26c6da;
+  --secondary-color: #063155;
+  --text-dark: #2c3e50;
+  --text-light: #7f8c8d;
+  --bg-light: #f8fafc;
+  --bg-white: #ffffff;
+  --shadow-light: 0 2px 10px rgba(0, 0, 0, 0.08);
+  --shadow-medium: 0 8px 25px rgba(0, 0, 0, 0.12);
+  --shadow-heavy: 0 15px 35px rgba(0, 0, 0, 0.2);
+  --border-radius: 12px;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.about {
+  padding: clamp(40px, 8vw, 80px) clamp(20px, 5vw, 60px);
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--bg-white) 0%, var(--bg-light) 100%);
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.about::before {
+  content: '';
+  position: absolute;
+  top: -30%;
+  right: -15%;
+  width: 40%;
+  height: 160%;
+  background: linear-gradient(-45deg, rgba(0, 188, 212, 0.03), rgba(6, 49, 85, 0.05));
+  transform: rotate(-15deg);
+  z-index: -1;
+}
+
+/* About Container */
+.about-container {
+  display: flex;
+  align-items: center;
+  gap: clamp(2rem, 5vw, 4rem);
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  flex-wrap: wrap;
+  background: var(--bg-white);
+  padding: clamp(2rem, 5vw, 3rem);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-medium);
+  position: relative;
+  overflow: hidden;
+}
+
+.about-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-color), var(--primary-light));
+}
+
+/* About Text Section */
+.about-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.about-text h2 {
+  font-size: clamp(2.2rem, 4vw, 3rem);
+  color: var(--text-dark);
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  position: relative;
+  display: inline-block;
+}
+
+.about-text h2::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary-color), var(--primary-light));
+  border-radius: 2px;
+  animation: expandLine 1s ease-out 0.5s forwards;
+}
+
+@keyframes expandLine {
+  to {
+    width: 100%;
+  }
+}
+
+.about-text p {
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  color: var(--text-light);
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-left: 1rem;
+}
+
+.about-text p::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.5rem;
+  width: 3px;
+  height: 60%;
+  background: linear-gradient(180deg, var(--primary-color), var(--primary-light));
+  border-radius: 2px;
+}
+
+.about-text p:last-of-type {
+  margin-bottom: 0;
+}
+
+.about-text b {
+  color: var(--primary-dark);
+  font-weight: 600;
+  position: relative;
+}
+
+.about-text b::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--primary-color), transparent);
+  opacity: 0.3;
+}
+
+/* About Image Section */
+.about-img {
+  flex: 0 0 auto;
+  position: relative;
+}
+
+.about-img::before {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  right: -20px;
+  bottom: -20px;
+  background: linear-gradient(45deg, var(--primary-color), var(--primary-light));
+  border-radius: 50%;
+  opacity: 0.1;
+  z-index: -1;
+  transition: var(--transition);
+}
+
+.about-img:hover::before {
+  opacity: 0.2;
+  transform: scale(1.1);
+}
+
+.about-img img {
+  width: 200px;
+  height: 250px ;
+  object-fit: cover;
+  border-radius: 50px;
+  border: 4px solid var(--bg-white);
+  box-shadow: var(--shadow-medium);
+  transition: var(--transition);
+  position: relative;
+  z-index: 2;
+}
+
+.about-img img:hover {
+  transform: scale(1.05) rotate(-2deg);
+  box-shadow: var(--shadow-heavy);
+  border-color: var(--primary-light);
+}
+
+/* Skills Highlight Section */
+.skills-highlight {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(0, 188, 212, 0.2);
+}
+
+.skills-highlight h3 {
+  font-size: 1.3rem;
+  color: var(--text-dark);
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.skills-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.skill-tag {
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+  color: var(--bg-white);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.skill-tag:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 188, 212, 0.3);
+}
+
+/* Mobile Responsive */
+@media screen and (max-width: 768px) {
+  .about {
+    padding: 2rem 1rem;
+    align-items: flex-start;
+  }
+  
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+    padding: 2rem 1.5rem;
+  }
+  
+  .about-text {
+    order: 2;
+    min-width: auto;
+  }
+  
+  .about-text p {
+    text-align: left;
+    padding-left: 1rem;
+  }
+  
+  .about-img {
+    order: 1;
+  }
+
+  .about-img img {
+    width: 220px;
+    height: 220px;
+  }
+  
+  .skills-highlight {
+    text-align: left;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .about-container {
+    padding: 1.5rem 1rem;
+  }
+  
+  .about-img img {
+    width: 170px;
+    height: 210px;
+  }
+  
+  .about-text p {
+    padding-left: 0.75rem;
+  }
+  
+  .about-text p::before {
+    width: 2px;
+  }
+  
+  .skills-tags {
+    gap: 0.5rem;
+  }
+  
+  .skill-tag {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+  }
+}
+
+/* Animation Classes */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.img-zoom {
+  transition: var(--transition);
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .about-container::before,
+  .about-text h2::after,
+  .about-img::before,
+  .about-img img,
+  .skill-tag,
+  .fade-in {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+  }
+  
+  .about-text h2::after {
+    width: 100% !important;
+  }
+}
+
+.about-img img:focus,
+.skill-tag:focus {
+  outline: 3px solid var(--primary-color);
+  outline-offset: 3px;
+}
