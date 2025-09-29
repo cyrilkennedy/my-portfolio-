@@ -40,8 +40,8 @@ function Contact() {
         />
         <p>
           You can also reach me on: 
-          <a href="https://linkedin.com" target="_blank" rel="noreferrer"> LinkedIn</a> | 
-          <a href="https://github.com" target="_blank" rel="noreferrer"> GitHub</a>
+          <a href="https://www.linkedin.com/in/cyril-kennedy-28130b306" target="_blank" rel="noreferrer"> LinkedIn</a> | 
+          <a href="https://github.com/cyrilkennedy" target="_blank" rel="noreferrer"> GitHub</a>
         </p>
       </div>
     </div>
