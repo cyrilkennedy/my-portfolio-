@@ -12,13 +12,14 @@ import './App.css'
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
     <Router>
       <div className="App">
         <Navbar />
-
+<ScrollToTop/>
         <main>
           <Routes>
             <Route path="/" element={<Home />} />

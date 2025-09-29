@@ -1,6 +1,6 @@
 import React from "react";
 import "./../styles/Home.css";
-
+import { Link } from "react-router-dom";
 function Home() {
   return (
     <div className="home">
@@ -64,7 +64,7 @@ function Home() {
             <p>Resolved repository/GPG key errors, handled missing package issues, and manually installed Go from binaries. Demonstrated strong Linux CLI skills in software installation, error handling, and system troubleshooting.</p>
           </div>
         </div>
-        <a href="/projects" className="btn">View All Projects</a>
+       <Link to="/projects" className="btn">View All Projects</Link>
       </section>
 
       {/* Internship Snapshot */}
