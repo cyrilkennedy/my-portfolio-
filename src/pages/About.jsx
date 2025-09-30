@@ -9,7 +9,7 @@ function About() {
           <h2>About Me</h2>
           <p>
             Hi, I'm <b>Kennedy</b> — a <b>Full-Stack Developer</b> and 
-            <b> Cybersecurity Analyst in training</b>, driven by the challenge of building 
+            <b> Cybersecurity Analyst </b>, driven by the challenge of building 
             digital systems that are both <b>scalable</b> and <b>secure</b>. 
             My passion lies at the intersection of <b>software development</b> and 
             <b> cyber defense</b>, where creativity meets strategy.
