@@ -1,12 +1,33 @@
-# React + Vite
+# Kennedy Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A redesigned portfolio built with Next.js App Router. The site presents Kennedy's work across full-stack development, cybersecurity, and graphic design with a stronger visual system, smoother animations, and a cleaner content structure.
 
-Currently, two official plugins are available:
+## Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Next.js
+- React 19
+- CSS with a custom design system
+- EmailJS browser SDK for the contact form
 
-## Expanding the ESLint configuration
+## Local Development
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+npm install
+npm run dev
+```
+
+`npm run dev` uses the Webpack dev server for better stability on Windows. If you want to try Turbopack again later, use `npm run dev:turbo`.
+
+## Scripts
+
+- `npm run dev` starts the development server
+- `npm run dev:turbo` starts the Turbopack dev server
+- `npm run build` creates a production build
+- `npm run start` runs the production server
+- `npm run lint` checks the codebase with ESLint
+- `npm run clean` removes the local `.next` cache manually
+
+## Notes
+
+- Remote images are loaded from Cloudinary through the Next.js image pipeline.
+- The contact form supports `NEXT_PUBLIC_EMAILJS_SERVICE_ID`, `NEXT_PUBLIC_EMAILJS_TEMPLATE_ID`, and `NEXT_PUBLIC_EMAILJS_PUBLIC_KEY`, and falls back to the previous hardcoded values if those variables are not set.
